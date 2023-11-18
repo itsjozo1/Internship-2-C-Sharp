@@ -1,0 +1,15 @@
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/bin/Debug/net7.0/Blagajna
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/bin/Debug/net7.0/Blagajna.deps.json
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/bin/Debug/net7.0/Blagajna.runtimeconfig.json
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/bin/Debug/net7.0/Blagajna.dll
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/bin/Debug/net7.0/Blagajna.pdb
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.csproj.AssemblyReference.cache
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.AssemblyInfoInputs.cache
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.AssemblyInfo.cs
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.csproj.CoreCompileInputs.cache
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.dll
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/refint/Blagajna.dll
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.pdb
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/Blagajna.genruntimeconfig.cache
+/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/Debug/net7.0/ref/Blagajna.dll
