@@ -87,41 +87,36 @@ public class StatsMenu
         case 3:
             Console.Clear();
             valueUnsell = 0;
-            var selledArticles = new List<string>();
-            var soldArticles = articles.ToDictionary(entry => entry.Key, entry => entry.Value);
+            var soldIndex = new List<string>();
+            var soldArticles2 = articles.ToDictionary(entry => entry.Key, entry => entry.Value);
+            foreach (var item in soldArticles2)
+            {
+                soldArticles2[item.Key] = (0, item.Value.Item2, item.Value.Item3);
+            }
+            foreach (var item in recipes)
+            {
+                foreach (var itemRecipes in item.Value.Item2)
+                {
+                    if (soldIndex.Contains(itemRecipes.Key) == false)
+                    {
+                        soldIndex.Add(itemRecipes.Key);
+                    }
+                    soldArticles2[itemRecipes.Key] = (soldArticles2[itemRecipes.Key].Item1 + itemRecipes.Value,
+                        soldArticles2[itemRecipes.Key].Item2, soldArticles2[itemRecipes.Key].Item3);
+                }
+            }
             Console.WriteLine($"ARTIKLI KOJI SU PRODANI: \nNaziv\t\tKoličina\tCijena\t\tRok trajanja\t\tUkupno");
-            foreach (var itemRecipe in recipes)
+            foreach (var item in soldIndex)
             {
-                foreach (var itemRecipeArticle in itemRecipe.Value.Item2)
-                {
-                    soldArticles[itemRecipeArticle.Key] = ((soldArticles[itemRecipeArticle.Key].Item1 - itemRecipeArticle.Value), soldArticles[itemRecipeArticle.Key].Item2, soldArticles[itemRecipeArticle.Key].Item3);
-                    if (selledArticles.Contains(itemRecipeArticle.Key) == false)
-                    {
-                        selledArticles.Add(itemRecipeArticle.Key);
-                    }
-                }
-            }
-            foreach (var itemRecipe in recipes)
-            {
-                foreach (var itemRecipeArticle in itemRecipe.Value.Item2)
-                {
-                    if (selledArticles.Contains(itemRecipeArticle.Key) == false)
-                    {
-                        soldArticles[itemRecipeArticle.Key] = ((soldArticles[itemRecipeArticle.Key].Item1 - itemRecipeArticle.Value), soldArticles[itemRecipeArticle.Key].Item2, soldArticles[itemRecipeArticle.Key].Item3);
-                    }
-                }
-            }
-            foreach (var item in selledArticles)
-            {
-                valueUnsell += (soldArticles[item].Item2*soldArticles[item].Item1);
-                Console.WriteLine($"{item}\t\t{soldArticles[item].Item1}\t\t{soldArticles[item].Item2}e\t\t" +
-                                  $"{soldArticles[item].Item3.ToString("dd.MM.yyyy")}\t\t{soldArticles[item].Item1 * soldArticles[item].Item2}e");
-            }
-            Console.WriteLine($"UKUPNA VRIJEDNOST: {valueUnsell}e");
+                valueUnsell += (soldArticles2[item].Item2*soldArticles2[item].Item1);
+                Console.WriteLine($"{item}\t\t{soldArticles2[item].Item1}\t\t{soldArticles2[item].Item2}e\t\t" +
+                                  $"{soldArticles2[item].Item3.ToString("dd.MM.yyyy")}\t\t{soldArticles2[item].Item1 * soldArticles2[item].Item2}e");
+            }           
+            Console.WriteLine($"UKUPNA VRIJEDNOST: {valueUnsell.ToString("00.00")}e");
             ReturnToMain();
             break;
         case 4:
-            double income = 25000;
+            double income = 25000;//teoretske vrijednosti
             int paycheck = 1000 * workers.ToList().Count;
             int spend = 2000;
             Console.Clear();

@@ -81,8 +81,15 @@ public class ArticlesMenu
     {
         case 1:
             Console.Clear();
+            InsertArticle:
             Console.WriteLine("Unesite artikal sa sljedećim podacima\nNaziv: ");
             string name = Console.ReadLine();
+            if (name.Equals(""))
+            {
+                Console.Clear();
+                Console.WriteLine("\nUnesite naziv artikla\n");
+                goto InsertArticle;
+            }
             Console.WriteLine("Cijena: ");
             float price;
             string s = Console.ReadLine();
@@ -142,7 +149,9 @@ public class ArticlesMenu
                 
                 if (CheckArticle(deleteName, articles))
                 {
-                    Console.WriteLine($"Želite li izbrsati proizvod: {articles[deleteName]} (da/ne)");
+                    Console.WriteLine($"Želite li izbrisati proizvod: {deleteName} {articles[deleteName].Item1}kom" +
+                                      $",cijena: {articles[deleteName].Item2}" +
+                                      $",Rok trajanja: {articles[deleteName].Item3.ToString("dd,MM,yyyy")} (da/ne)");
                     save = Console.ReadLine();
                     if (ConfirmChange(save))
                     {
@@ -376,7 +385,6 @@ public class ArticlesMenu
                     }
                     ReturnToMain();
                     return;
-                    break;
                 case 2:
                     Console.Clear();
                     var sortedArticles = articles.Keys.ToList();
@@ -391,7 +399,6 @@ public class ArticlesMenu
                     }
                     ReturnToMain();
                     return;
-                    break;
                 case 3:                    
                     Console.Clear();
                     Console.WriteLine($"SVI ARTIKLI PO DATUMU: \nNaziv\t\tKoličina\tCijena\t\tRok trajanja\t\t\tUkupno");
@@ -404,7 +411,6 @@ public class ArticlesMenu
                     }
                     ReturnToMain();
                     return;
-                    break;
                 case 4:
                     Console.Clear();
                     Console.WriteLine($"SVI ARTIKLI PO DATUMU SILAZNO: \nNaziv\t\tKoličina\tCijena\t\tRok trajanja\t\t\tUkupno");
@@ -417,7 +423,6 @@ public class ArticlesMenu
                     }
                     ReturnToMain();
                     return;
-                    break;
                 case 5:                    
                     Console.Clear();
                     Console.WriteLine($"SVI ARTIKLI PO KOLIČINI: \nNaziv\t\tKoličina\tCijena\t\tRok trajanja\t\t\tUkupno");
@@ -430,7 +435,6 @@ public class ArticlesMenu
                     }
                     ReturnToMain();
                     return;
-                    break;
                 case 6:
                     Console.Clear();
                     var soldIndex = new List<string>();
@@ -495,7 +499,6 @@ public class ArticlesMenu
                     Console.Clear();
                     Console.WriteLine("Unesite ponuđene brojeve.");
                     goto choiceWrite;
-                    break;
             }
             break;
         case 0:

@@ -42,7 +42,7 @@ var recipes = new Dictionary<int, (DateTime, Dictionary<string, int>)>()
         {"Mlijeko", 1}
     })}
 };
-static string ReadLineWithMask()//preuzeto s gitihuba
+static string ReadLineWithMask()//preuzeto s githuba radi estetike
 {
     string pass = "";
     ConsoleKeyInfo key;
@@ -69,12 +69,11 @@ static string ReadLineWithMask()//preuzeto s gitihuba
 
     return pass;
 }
-
 void Password()
 {
     Console.Clear();
     Console.WriteLine("Unesi lozinku: ");
-    string pass = "maliducanadmin";
+    string pass = "admin";
     string enteredPass = ReadLineWithMask();
     if (enteredPass != pass)
     {

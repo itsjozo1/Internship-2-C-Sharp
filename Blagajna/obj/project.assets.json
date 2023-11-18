@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/Blagajna.csproj",
+      "projectUniqueName": "/Users/rokoperisic/Documents/Internship-2-C-Sharp/Blagajna/Blagajna.csproj",
       "projectName": "Blagajna",
-      "projectPath": "/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/Blagajna.csproj",
+      "projectPath": "/Users/rokoperisic/Documents/Internship-2-C-Sharp/Blagajna/Blagajna.csproj",
       "packagesPath": "/Users/rokoperisic/.nuget/packages/",
-      "outputPath": "/Users/rokoperisic/RiderProjects/Blagajna/Blagajna/obj/",
+      "outputPath": "/Users/rokoperisic/Documents/Internship-2-C-Sharp/Blagajna/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rokoperisic/.nuget/NuGet/NuGet.Config"

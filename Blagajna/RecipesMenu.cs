@@ -180,7 +180,7 @@ public class RecipesMenu
                     }
                     goto SelectArticle;
                 }
-                else if (CheckUnique(newArticle, recipes))
+                if (CheckUnique(newArticle, recipes))
                 {
                     Console.Clear();
                     Console.WriteLine("\nArtikal je već unesen u račun, unesite novi\n");

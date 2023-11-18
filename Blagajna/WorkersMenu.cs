@@ -59,8 +59,15 @@ public class WorkersMenu
     {
         case 1:
             Console.Clear();
+            InsertName:
             Console.WriteLine("Unesite radnika sa sljedećim podacima\nIme i Prezime: ");
             string name = Console.ReadLine();
+            if (name.Equals(""))
+            {
+                Console.Clear();
+                Console.WriteLine("Unesite ime i prezime rednika: ");
+                goto InsertName;
+            }
             Console.WriteLine("Datum rođenja (YYYY MM DD): ");
             string s = Console.ReadLine();
             DateTime birth;
@@ -72,7 +79,7 @@ public class WorkersMenu
                 s = Console.ReadLine();
             }
             Console.Clear();
-            Console.WriteLine($"Unijeli ste informacije o radniku: {name} datum trajanja {birth.ToString("yyyy,MM,dd")}\n" +
+            Console.WriteLine($"Unijeli ste informacije o radniku: {name}, datum rođenja {birth.ToString("yyyy,MM,dd")}\n" +
                               $"Potvrdite unos (da/ne): ");
             string save = Console.ReadLine();
             if (ConfirmChange(save))
@@ -103,7 +110,7 @@ public class WorkersMenu
                 
                 if (CheckWorker(deleteName, workers))
                 {
-                    Console.WriteLine($"Želite li izbrsati radnika: {deleteName} {workers[deleteName].Date.ToString("yyyy,MM,dd")} (da/ne)");
+                    Console.WriteLine($"Želite li izbrsati radnika: {deleteName}, datum rođenja: {workers[deleteName].Date.ToString("yyyy,MM,dd")} (da/ne)");
                     save = Console.ReadLine();
                     if (ConfirmChange(save))
                     {
@@ -190,8 +197,15 @@ public class WorkersMenu
                 {
                     case 1:
                         Console.Clear();
+                        InsertNewName:
                         Console.WriteLine("Unesite novo ime i prezime radnika: ");
                         string changedName = Console.ReadLine();
+                        if (changedName.Equals(""))
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Unesite ime i prezime radnika: ");
+                            goto InsertNewName;
+                        }
                         Console.Clear();
                         Console.WriteLine($"Potvrdite uređivanje imena i prezimena radnika iz {changeWorker} u {changedName} (da/ne)");
                         string confirm = Console.ReadLine();
@@ -203,11 +217,7 @@ public class WorkersMenu
                             Console.WriteLine("Promjena potvrđena.");
                             returnToMain();
                         }
-                        else
-                        {
-                            goto case 1;
-                        }
-                        break;
+                        goto case 1;
                     case 2:
                         Console.Clear();
                         Console.WriteLine("Unesite novi datum rođenja: ");
@@ -230,24 +240,17 @@ public class WorkersMenu
                             Console.WriteLine("Promjena potvrđena.");
                             returnToMain();
                         }
-                        else
-                        {
-                            goto case 2;
-                        }
-                        break;
+
+                        goto case 2;
                     default:
                         Console.Clear();
                         Console.WriteLine("Unesite ponuđene brojeve");
                         goto ChangeSelect;
                 }
             }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Nepostoji radnik koji želite urediti, unesite ponovo: ");
-                goto Change;
-            }
-            break;
+            Console.Clear();
+            Console.WriteLine("Nepostoji radnik koji želite urediti, unesite ponovo: ");
+            goto Change;
         case 4:
             
             Console.Clear();
